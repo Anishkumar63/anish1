@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+  .main{
+    width: 35%;
+    height: 65vh;
+    background-color: rgba(6, 24, 23, 0.649);
+    /* border: dotted red; */
+    border-radius: 20px;
+    box-shadow: 0 0 500px rgb(23, 242, 34);
+    border: solid 5px black;
+}
+h1{
+    text-align: center;
+}
+label{
+    margin-left: 220px;
+    
+}
+#d1{
+    background-color: aqua;
+    margin-left: 5vh;
+    width: 50vh;
+    height: 5vh;
+    border-radius: 10px;
+    border-bottom: 20px;
+    margin-left: 80px;
+}
+#finp{
+    background-color: aqua;
+    width: 50vh;
+    height: 5vh;
+    border-radius:10px ;
+    margin-left: 80px;
+}
+#finp{
+    background-color: rgb(63, 129, 82);
+}
+#res{
+    background-color:rgb(190, 167, 193);
+    width: 50vh;
+    height: 5vh;
+    text-align: center;
+    margin-left: 12vh;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+
+}
+#d2{
+    background-color: rgb(17, 152, 107);
+    margin-left: 80px;
+
+}
+#tinp{
+    background-color: blueviolet;
+    width: 50vh;
+    height: 5vh;
+    border-radius: 10px;
+    /* margin-left: 20px; */
+    border-top: 50vh;
+    margin-left: 80px;
+
+}
+button{
+    /* margin-bottom: 20vh; */
+    margin-left: 80px;
+    width: 10vh;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: rgb(230, 166, 19);
+}
+
+    </style>
+
+  
+</head>
+<body>
+<div class="main">
+    <h1>RID Baesed Convertion</h1>
+    <label>Number:</label>
+    <br>
+    <input id="d1"type="text"><br><br>
+    <label>form</label>
+    <select id="finp">
+        <option value="b">Binary Number</option>
+        <option value="o">octal number</option>
+        <option value="h">HexaDecmal Number</option> 
+        <option value="d">DecmalNumber</option>
+        
+    </select>
+    <label>To</label>
+    <br>
+
+    <select id="tinp">
+        <option value="b">Binary Number</option>
+        <option value="o">octal number</option>
+        <option value="h">HexaDecmal Number</option>
+        <option value="d">DecmalNumber</option>
+        </select>
+        <br><br>
+        <button type="button"onclick="convert()">convert</button>
+        <br><br>
+        <label>Result</label>
+        <input type="text"id="res">
+</div>
+<script>
+   function convert(){
+    let num=document.getElementById("d1").value.trim()
+    let frominp=document.getElementById("finp").value
+    let toinp=document.getElementById("tinp").value
+    let dec_num;
+    let result=""
+
+  if ( frominp==="b"){
+   dec_num= parseInt(num,2)
+   } else if(frominp==="h"){
+    dec_num=parseInt(num,16)
+  }
+  else if(frominp==="d"){
+    dec_num=parseInt(num,10)
+
+  }
+
+  // convert decimal any number sytem
+
+  if(toinp==="b"){
+    result=dec_num.toString(2)
+
+  }
+  else if(toinp==="o"){
+    result=dec_num.toString(8)
+  }
+  else if(toinp==="h"){
+    result=dec_num.toString(16)
+
+  }
+else if(toinp==="d"){
+    result=dec_num.toString(10)
+}
+
+  document.getElementById("res").value=result
+
+
+}
+
+
+</script>
+
+</body>
+</html>
